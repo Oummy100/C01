@@ -3,7 +3,7 @@
 
 read d
 #Calcul le nombre de fichier à traver un argument
-count=$(ls -1 "$d" | wc -l)
+count=$(ls "$d" | wc -l)
   echo "Le dossier $d contient $count fichier(s)."
 
 
