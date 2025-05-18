@@ -1,6 +1,14 @@
 #!/bin/bash
-#Fait appel aux arguments
-shift
-echo Argument1:  $1
-echo Argument2:  $2
+# Ce script affiche tous les arguments, un par ligne
+
+# Vérifie s'il y a au moins un argument
+if [ $# -eq 0 ]; then
+  echo "Aucun argument fourni."
+  exit 1
+fi
+
+# Affiche chaque argument sur une ligne
+for arg in "$@"; do
+  echo "$arg"
+done
 
