@@ -1,7 +1,6 @@
 #!/bin/bash
 #Fait appel aux arguments
+echo Argument1:  $1
 shift
-echo 1: $1
-echo 2: $2
-
+echo Argument2:  $@
 
