@@ -1,9 +1,10 @@
 #!/bin/bash
 # Compteur pour afficher le numéro de chaque argument
-shift
+read -a arg
+
 i=1
-for arg in "$@"; do
-  echo "Argument $i: $arg"
-  ((i++))
+for arg in "${arg[@]}"; do
+  echo "Argument $((i++)): $arg"
 done
+
 
