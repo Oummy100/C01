@@ -1,33 +1,29 @@
 #!/bin/bash
 
-# Demande les deux nombres et l'opérateur
-read -p "Entrez le premier nombre : " num1
-read -p "Entrez le deuxième nombre : " num2
-read -p "Entrez l'opérateur (+, -, *, /) : " op
+# Demande les nombres et l'opérateur
+echo "Entrez le premier nombre :"
+read a
 
-# Vérifie et effectue l'opération
-case $op in
-  +)
-    result=$((num1 + num2))
-    echo "Résultat : $num1 + $num2 = $result"
-    ;;
-  -)
-    result=$((num1 - num2))
-    echo "Résultat : $num1 - $num2 = $result"
-    ;;
-  \*)
-    result=$((num1 * num2))
-    echo "Résultat : $num1 * $num2 = $result"
-    ;;
-  /)
-    if [ "$num2" -eq 0 ]; then
-      echo " Division par zéro interdite."
-    else
-      result=$((num1 / num2))
-      echo "Résultat : $num1 / $num2 = $result"
-    fi
-    ;;
-  *)
-    echo " Opérateur invalide. Utilisez +, -, *, /."
-    ;;
-esac
+echo "Entrez le deuxième nombre :"
+read b
+
+echo "Entrez l'opérateur (+, -, *, /) :"
+read op
+
+# Calcule selon l'opérateur
+if [ "$op" = "+" ]; then
+  echo "Résultat : $((a + b))"
+elif [ "$op" = "-" ]; then
+  echo "Résultat : $((a - b))"
+elif [ "$op" = "*" ]; then
+  echo "Résultat : $((a * b))"
+elif [ "$op" = "/" ]; then
+  if [ "$b" -eq 0 ]; then
+    echo "Erreur : division par zéro "
+  else
+    echo "Résultat : $((a / b))"
+  fi
+else
+  echo "Opérateur non reconnu "
+fi
+
